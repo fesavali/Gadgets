@@ -39,8 +39,8 @@ $result = mysqli_query($conf,$sql);
       <td><a href="details.php?id=<?php echo $row["id"];?>" class="btn btn-primary">More Details</a></td>
     </tr>
 	<tr>
-	<td><a href="details.php?id=<?php echo $row["id"];?>" class="btn btn-primary">Check Reviews</a></td>
-    <td><a href="details.php?id=<?php echo $row["id"];?>" class="btn btn-primary">Add Review</a></td>
+	<td><a href="c_reviews.php?id=<?php echo $row["id"];?>" class="btn btn-primary">Check Reviews</a></td>
+    <td><a href="a_reviews.php?id=<?php echo $row["id"];?>" class="btn btn-primary">Add Review</a></td>
     </tr>
   </tbody>
 </table>
