@@ -9,7 +9,7 @@ $result = mysqli_query($conf,$sql);
 <div class="row"style="padding-left: 10px;padding-right: 10px;">
   <div class="col-md-3" style="padding-left: 10px;padding-right: 10px;background-color: rgba(255,255,255); border-radius:8px; padding-top: 10px; padding-bottom: 20px; color: #000;">
   	<span class="badge bg-info" style="width: 100%; padding-top:10px;padding-bottom:10px; background-color: lightblue; !Important;">SEARCH FOR GADGETS</span>
-  	<form>
+  	<form action="search.php" method="POST">
   <!-- Email input -->
    <div class="col-12">
   <label>Select Brand</label>
@@ -48,7 +48,7 @@ $result = mysqli_query($conf,$sql);
   <div class="col-6">
     <label>Ram</label>
 <select class="" name="ram" data-select2-id="14" tabindex="-1" aria-hidden="true" 
- style="width: 100%; background-color: rgba(0,0,0, 0.8); color: #fff; border-radius:8px;padding-top:10px;padding-bottom:10px;">
+ style="width: 100%; background-color: rgba(0,0,0, 0.8); color: #fff; border-radius:8px;padding-top:10px;padding-bottom:10px;" required>
 <option disabled="disabled">Select Ram Size</option>
 	<option value="1">1 GB</option>
 	<option value="2">2 GB</option> 
@@ -63,7 +63,7 @@ $result = mysqli_query($conf,$sql);
   <div class="col-6">
     <label>Storage</label>
 <select class="" name="storage" data-select2-id="14" tabindex="-1" aria-hidden="true" 
- style="width: 100%; background-color: rgba(0,0,0, 0.8); color: #fff; border-radius:8px;padding-top:10px;padding-bottom:10px;">
+ style="width: 100%; background-color: rgba(0,0,0, 0.8); color: #fff; border-radius:8px;padding-top:10px;padding-bottom:10px;" required>
 <option disabled="disabled">Select Storage Size</option>
 	<option value="4">4 GB</option>
 	<option value="8">8 GB</option>
@@ -81,14 +81,14 @@ $result = mysqli_query($conf,$sql);
 <div class="row" style="padding-bottom: 10px;">
   <div class="col-6">
     <label>Min Price</label>
-<span>&#36;</span><input class="form-control" type="number" name="min_price" placeholder="Min Price in $"></div>
+<span>&#36;</span><input class="form-control" type="number" name="min_price" placeholder="Min Price in $" required></div>
   <div class="col-6">
 <label>Max Price</label>
-<span>&#36;</span><input class="form-control" type="number" name="max_price" placeholder="Max Price in $"></input></div>
+<span>&#36;</span><input class="form-control" type="number" name="max_price" placeholder="Max Price in $" required></input></div>
 </div>
 
   <!-- Submit button -->
-  <button type="submit" class="btn btn-primary btn-block">Search Gadget</button>
+  <button type="submit" class="btn btn-primary btn-block" name="submit">Search Gadget</button>
 </form>
   </div>
   <div class="col-md-9">
@@ -176,7 +176,7 @@ $result = mysqli_query($conf,$sql);
 	<div class="col-md-4">
 	<div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
     <img src="<?php echo "images/".$row["image"];?>" style="border-radius: 8px;" class="img-fluid" alt="product image" />
-    <a href="{{ route('details', $vehicle->id) }}">
+    <a href="details.php?id=<?php echo $row["id"];?>">
       <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
     </a>
   </div>

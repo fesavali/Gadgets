@@ -18,7 +18,7 @@ $result = mysqli_query($conf,$sql);
 	<div class="col-md-4">
 	<div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
     <img src="<?php echo "images/".$row["image"];?>" style="border-radius: 8px;" class="img-fluid" alt="product image" />
-    <a href="{{ route('details', $vehicle->id) }}">
+    <a href="details.php?id=<?php echo $row["id"];?>">
       <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
     </a>
   </div>
