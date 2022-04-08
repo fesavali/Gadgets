@@ -39,7 +39,7 @@ $result1 = mysqli_query($conf,$sql1);
     <?php
   }
 } else {
-    echo "No Reviews posted yet"; 
+    echo "No Reviews posted yet."; 
 }
 mysqli_close($conf);
   ?>
