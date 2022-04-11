@@ -37,7 +37,7 @@ $result = mysqli_query($conf,$sql);
     </tr>
     <tr>
       <th>Gadget Storage: &nbsp;&nbsp;<b><?php echo $row["storage"]; ?>&nbsp;&nbsp;GB</b></th>
-      <td><a href="details.php?id=<?php echo $row["id"];?>" class="btn btn-primary">More Details</a></td>
+      <td><a href="mdeal.php?id=<?php echo $row["id"];?>" class="btn btn-primary">Buy Now</a></td>
     </tr>
   </tbody>
 </table>
